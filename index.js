@@ -118,9 +118,9 @@ ${memories.map(m => "- " + m.content).join("\n")}
 app.get("/", (_, res) =>
   res.send("MJBot fonctionne !")
 );
-
-app.listen(10000, () =>
-  console.log("Serveur en cours d'exécution sur Render (port 10000)")
+const PORT = process.env.PORT || 10000;
+app.listen(PORT, () =>
+  console.log("Serveur en cours d'exécution sur Render (port " + PORT + ")")
 );
 
 // -----------------------------
